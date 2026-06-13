@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Study Cafe",
+  "description": "Platform pencarian dan reservasi tempat belajar ideal (Cafe \u0026 Coworking Space) dengan sistem admin, registrasi, dan histori pemesanan yang disimpan secara persisten.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "Cafe": {
+      "title": "Cafe",
+      "description": "Study cafe property detail",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier of the cafe" },
+        "name": { "type": "string", "description": "Name of the study cafe" },
+        "address": { "type": "string", "description": "Address of the cafe" },
+        "rating": { "type": "number", "description": "Average user rating" },
+        "reviews": { "type": "integer", "description": "Number of reviews received" },
+        "pricePerHour": { "type": "integer", "description": "Hourly booking rate" },
+        "image": { "type": "string", "description": "URL link to the property image" },
+        "facilities": { "type": "array", "description": "Lists of available amenities" },
+        "description": { "type": "string", "description": "Short summary text about the space" },
+        "operationalHours": { "type": "string", "description": "Schedule time span" }
+      },
+      "required": ["id", "name", "address", "pricePerHour", "facilities"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Reservation detail created by customers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier of the reservation" },
+        "cafeId": { "type": "string", "description": "Associated cafe identifier" },
+        "cafeName": { "type": "string", "description": "Name representation of the cafe" },
+        "userEmail": { "type": "string", "description": "Email address of the registeree" },
+        "userName": { "type": "string", "description": "Name representation of the customer" },
+        "date": { "type": "string", "description": "Reservation calendar date" },
+        "duration": { "type": "integer", "description": "Total booked hours" },
+        "startTime": { "type": "string", "description": "Start clock-time" },
+        "totalPrice": { "type": "integer", "description": "Sum payment value" },
+        "createdAt": { "type": "string", "description": "Creation timestamp representation" },
+        "status": { "type": "string", "description": "Current authorization state of the slot" }
+      },
+      "required": ["id", "cafeId", "userEmail", "date", "startTime", "duration", "totalPrice", "status"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Profile data for application users",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique registration ID" },
+        "email": { "type": "string", "description": "Verified login email pointer" },
+        "name": { "type": "string", "description": "Full display profile name" },
+        "role": { "type": "string", "description": "Security access parameter" },
+        "phone": { "type": "string", "description": "Contact number" },
+        "createdAt": { "type": "string", "description": "Time of signup registration" }
+      },
+      "required": ["id", "email", "name", "role"]
+    }
+  },
+  "firestore": {
+    "cafes": {
+      "schema": "Cafe",
+      "description": "Collection of all study cafes listing"
+    },
+    "bookings": {
+      "schema": "Booking",
+      "description": "Customer reservations listing"
+    },
+    "users": {
+      "schema": "User",
+      "description": "Registered app profiles block"
+    }
+  }
+}
